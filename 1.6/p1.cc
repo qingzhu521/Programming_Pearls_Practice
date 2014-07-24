@@ -9,5 +9,6 @@ int n;
 int main(){
     n = 0;
     while(scanf("%d", &a[n]) != EOF)n++;
+    qsort(a, n, sizeof(int), 
 }
 
