@@ -1,14 +1,19 @@
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
+#include "util.h"
+using namespace std;
 
-using namspace std;
+int a[1000000];
+int cmp(const void *x, const void *y){
+    return *(int*)x - *(int*)y;
+}
 
-int a[10000000];
-int n;
 int main(){
-    n = 0;
-    while(scanf("%d", &a[n]) != EOF)n++;
-    qsort(a, n, sizeof(int), 
+    int n = 0;
+    while(~scanf("%d", &a[n])) n++;
+    qsort(a, n, sizeof(int), cmp);
+    
+    for (int i = 0; i < n; i++){
+        printf("%d\n", a[i]);
+    }
+    return 0;
 }
 
